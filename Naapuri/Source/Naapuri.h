@@ -3,6 +3,9 @@
 #ifdef WIN32
 	#include <Windows.h>
 #endif
+
 #include <string>
 
-#include "Core/Core.h"
+#include "../resource.h"
+
+#include "Core/CoreMinimal.h"

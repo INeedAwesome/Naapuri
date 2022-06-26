@@ -104,6 +104,7 @@ BEGIN
     IDS_PER_GAME_NAME       "Naapuri"
     IDS_WINDOW_CLASS        "GAME_WINDOW"
     IDS_SHORT_NAME          "Naap"
+    IDS_SPLASH_URL          "Assets\\Images\\Naapuri.bmp"
 END
 
 #endif    // Swedish (Sweden) resources

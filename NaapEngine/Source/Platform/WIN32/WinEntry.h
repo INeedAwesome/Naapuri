@@ -1,8 +1,10 @@
 #include "NaapEngine.h"
 
 #include "IApplication.h"
+#include "Common/CmdLineArgs.h"
 
-extern IApplication* entryApplication();
+
+extern Win32::IApplication* entryApplication();
 
 int CALLBACK WinMain(HINSTANCE, HINSTANCE, PSTR, int)
 {
@@ -10,10 +12,15 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, PSTR, int)
 	auto entryApp = entryApplication();
 
 	PerGameSettings gameSettings;
-	entryApp->setupPerGameSettings();
+	entryApp->SetupPerGameSettings();
 
 	Logger logger;
-	entryApp->initialize();
+	entryApp->PreInitialize();
+	CmdLineArgs::ReadArguments();   
+
+	//SplashScreen::AddMessage(L"Starting application...");
+
+	entryApp->Initialize();
 
 	MSG msg = { 0 };
 	while (msg.message != WM_QUIT)
@@ -25,7 +32,7 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, PSTR, int)
 		}
 		else
 		{
-			entryApp->update();
+			entryApp->Update();
 			
 
 		}

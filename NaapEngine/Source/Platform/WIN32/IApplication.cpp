@@ -1,5 +1,10 @@
 #include "NaapEngine.h"
 #include "IApplication.h"
-IApplication::IApplication()
-{
+
+namespace Win32 {
+
+	IApplication::IApplication()
+	{
+	}
+
 }

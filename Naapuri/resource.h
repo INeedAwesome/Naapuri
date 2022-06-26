@@ -6,6 +6,7 @@
 #define IDS_PER_GAME_NAME               102
 #define IDS_WINDOW_CLASS                103
 #define IDS_SHORT_NAME                  104
+#define IDS_SPLASH_URL                  105
 
 // Next default values for new objects
 // 

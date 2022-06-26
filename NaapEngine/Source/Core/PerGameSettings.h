@@ -17,6 +17,10 @@ public:
 
 	static WCHAR* GetBootTime() { return instance->bootTime; }
 
+	static WCHAR* GetSplashURL() { return instance->m_SplashURL; }
+	static void SetSplashURL(UINT id) { LoadString(HInstance(), id, instance->m_SplashURL, MAX_NAME_STRING); }
+
+
 private:
 	static PerGameSettings* instance;
 	static PerGameSettings* GetInstance() { return instance; }
@@ -25,7 +29,7 @@ private:
 	WCHAR shortName[MAX_NAME_STRING];
 	HICON mainIcon;
 	WCHAR bootTime[MAX_NAME_STRING];
-
+	WCHAR m_SplashURL[MAX_NAME_STRING];
 	
 
 };

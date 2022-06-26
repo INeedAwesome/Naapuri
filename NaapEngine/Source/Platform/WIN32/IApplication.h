@@ -1,19 +1,23 @@
 #pragma once
 #include "NaapEngine.h"
 
-#define ENTRYAPP(x) IApplication* entryApplication() { return new x; }
+#define ENTRYAPP(x) Win32::IApplication* entryApplication() { return new x; }
 
-class NAAP_API IApplication
-{
-public:
-	IApplication();
-	virtual ~IApplication() {};
+namespace Win32 {
 
-	virtual void setupPerGameSettings() = 0;
-	virtual void initialize() = 0;
-	virtual void update() = 0;
+	class NAAP_API IApplication
+	{
+	public:
+		IApplication();
+		virtual ~IApplication() {};
 
-private:
-};
+		virtual void SetupPerGameSettings() = 0;
+		virtual void PreInitialize() = 0;
+		virtual void Initialize() = 0;
+		virtual void Update() = 0;
 
-IApplication* entryApplication();
+	private:
+	};
+
+	IApplication* entryApplication();
+}

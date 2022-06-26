@@ -31,7 +31,7 @@ void Logger::PrintLog(const WCHAR* fmt, ...)
 
 	std::wfstream outfile;
 	//			 File url        mode to open
-	outfile.open(std::wstring(LogDirectory() + L"/" + LogFile()), std::ios::app);
+	outfile.open(std::wstring(LogDirectory() + L"\\" + LogFile()), std::ios::app);
 
 	if (outfile.is_open())
 	{
@@ -77,13 +77,15 @@ void Logger::PrintDebugSeperator()
 
 #ifdef _DEBUG
 	std::wfstream outfile;
-	outfile.open(std::wstring(LogDirectory() + L"/" + LogFile()), std::ios_base::app);
+	outfile.open(std::wstring(LogDirectory() + L"\\" + LogFile()), std::ios_base::app);
 
-	if (outfile.is_open()) {
+	if (outfile.is_open()) 
+	{
 		outfile << s;
 		outfile.close();
 	}
-	else {
+	else 
+	{
 		MessageBox(NULL, L"Unable to open log file...", L"Log Error", MB_OK);
 	}
 #endif
@@ -110,7 +112,8 @@ bool Logger::IsMTailRunning()
 /* Start MTail from Project or Build Directory - Depends on where ran from */
 void Logger::StartMTail()
 {
-	if (IsMTailRunning()) {
+	if (IsMTailRunning()) 
+	{
 		Logger::PrintLog(L"--MTail failed to start - Already Running\n");
 		return;
 	}
@@ -119,6 +122,6 @@ void Logger::StartMTail()
 	WCHAR path[MAX_PATH] = { 0 };
 	GetCurrentDirectoryW(MAX_PATH, path);
 	std::wstring url = path + std::wstring(L"/mTAIL.exe");
-	std::wstring params = L" \"" + LogDirectory() + L"/" + LogFile() + L"\" /start";
+	std::wstring params = L" \"" + LogDirectory() + L"\\" + LogFile() + L"\" /start";
 	ShellExecute(0, NULL, url.c_str(), params.c_str(), NULL, SW_SHOWDEFAULT);
 }
