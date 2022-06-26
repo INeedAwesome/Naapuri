@@ -103,6 +103,7 @@ STRINGTABLE
 BEGIN
     IDS_PER_GAME_NAME       "Naapuri"
     IDS_WINDOW_CLASS        "GAME_WINDOW"
+    IDS_SHORT_NAME          "Naap"
 END
 
 #endif    // Swedish (Sweden) resources

@@ -26,7 +26,7 @@ bool initializeWindow();
 void windowMessageLoop();
 
 #pragma endregion
-
+/*
 int CALLBACK WinMain(HINSTANCE, HINSTANCE, PSTR, int) 
 { 
 	initializeVariables();
@@ -39,7 +39,7 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, PSTR, int)
 	
 	return 0;
 }
-
+*/
 void windowMessageLoop() 
 {
 	MSG msg = { 0 };

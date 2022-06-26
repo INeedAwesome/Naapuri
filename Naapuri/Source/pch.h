@@ -6,3 +6,6 @@
 
 #define MAX_NAME_STRING 256
 #define HInstance() GetModuleHandle(NULL)
+
+#include "NaapEngine.h"
+#include "Common/Logger.h"
